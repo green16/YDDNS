@@ -32,10 +32,7 @@ def get_record(d):
 
 
 ip = get_ip()
-try:
-    last_ip = open("lastip", mode='r+')
-except IOError:
-    last_ip = open("lastip", mode='w')
+last_ip = open("lastip", mode='w+')
 if last_ip.read() != ip:
     token = get_settings()["token"]
     domain = get_settings()["domain"]
